@@ -20,3 +20,15 @@ aws ec2 run-instances \
     --block-device-mappings '[{"DeviceName":"/dev/xvda","Ebs":{"VolumeSize":10,"VolumeType":"gp2"}}]' \
     --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=ec2-kodekloud}]' \
     --count 1
+
+    aws ec2 run-instances \
+    --image-id ami-0abcdef1234567890 \
+    --count 1 \
+    --instance-type t2.micro \
+    --key-name MyKeyPair \
+    --security-group-ids sg-0123456789abcdef0 \
+    --subnet-id subnet-0fedcba9876543210 \
+    --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=MyWebServer}]'
+
+
+    
